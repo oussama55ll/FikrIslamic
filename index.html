@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+
+    <title>Home Pgae</title>
+</head>
+<body>
+    <header id="header">
+        <img class="logo" src="images/logo_2.jpg">
+        <ul class="navigation">
+            <li><a href="#header">الرئيسية</a></li>
+            <li><a href="#topic">موضوعات</a></li>
+            <li><a id="contact-header" href="#">للتواصل معنا</a></li>
+        </ul>
+        <img class="open_menu" src="images/open_list.png" alt="">
+        <!-- <img class="close_menu" src="images/close_list.png" alt=""> -->
+    </header>
+
+    <section id="contact-bg">
+        <section id="contact">
+            <img id="contact-close" src="images/close.png" alt="">
+            <form id="contact-form">
+                <h1>للتواصل معنا :</h1>
+                <input required type="text" name="nom" id="nom" placeholder="الاسم الكامل"><br>
+                <input required type="email" name="email" id="email" placeholder="البريد الإلكتروني"><br>
+                <textarea required name="message" id="message" cols="40" rows="3" placeholder="الرسالة ..."></textarea>
+                <button type="submit" id="form-btn">إرسال</button>
+
+
+            </form>
+            <div id="sent-message">
+                <img src="images/checked.png" alt="">
+                <h3>لقد تم إرسال رسالتكم بنجاح</h3>
+            </div>
+        </section>
+    </section>
+
+    <section class="middle middle2">
+            <p>مرحبا بكم صفحتنا تقدم لكم</p>
+            <p>اذكار، دعاء ، اداب </p>
+            <a href="#topic" class="more">عرض المزيد</a>
+    </section>
+    
+    <section class="section_2">
+        <h2 class="topic" id="topic">موضوعات</h2>
+        <div class="line"></div>
+        <div class="cards">
+
+            <div class="card" id="adkar">
+                <img src="images/adkar_2.jpg" alt="">
+                <h2>الأذكار</h2>
+            </div>
+            
+            <div class="card" id="duaa">
+                <img src="images/duaa.jpg" alt="">
+                <h2>الدعاء</h2>
+            </div>
+
+            <div class="card" id="adab">
+                <img src="images/adab.jpg" alt="">
+                <h2>الآداب</h2>
+            </div>
+
+            <div class="card" id="last_card">
+                <img src="images/advices.jpeg" alt="">
+                <h2>نصائح</h2>
+            </div>
+
+            <div class="btn_card" id="btn_card">
+                <button id="btn_more" class="btn_more" type="button">المزيد ...</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section_3">
+        <h2 class="teamwork" id="teamwork">فريق العمل</h2>
+        <div class="line"></div>
+        <div class="all_teams">
+            <div class="one_team">
+                <img src="images/reda_.jpg" alt="">
+                <h3>رضى الدحمو</h3>
+                <small>متدرب</small>
+                <p>السنة الاولى البرمجة الرقمية
+                    <br><span class="dev101">DEV 101</span><br>
+                </p>
+            </div>
+
+            <div class="one_team">
+                <img src="images/man.png" alt="">
+                <h3>أسامة بلمانية</h3>
+                <small>متدرب</small>
+                <p>السنة الاولى البرمجة الرقمية
+                    <br><span class="dev101">DEV 101</span><br>
+                </p>
+            </div>
+
+            <div class="one_team">
+                <img src="images/man.png" alt="">
+                <h3>أشرف العلوي الخنوسي </h3>
+                <small>متدرب</small>
+                <p>السنة الاولى البرمجة الرقمية
+                    <br><span class="dev101">DEV 101</span><br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer_logo">
+            <img  src="images/logo_2.jpg">
+        </div>
+        <div class="footer_names">
+            <h5>@Oussama Belmanya</h5>
+            <h5>@Achraf Alaoui</h5>
+            <h5>@Reda Dahamou</h5>
+        </div>
+    </footer>
+
+
+
+
+
+
+<script>
+    var last_card = document.getElementById("last_card")
+    var btn_more = document.getElementById("btn_more")
+    var card_btn_more = document.getElementById("btn_card")
+
+    function ShowMore(){
+    last_card.style.display = "block"
+    card_btn_more.style.display ="none"
+    }
+    btn_more.addEventListener("click", ShowMore)
+
+    var navigation = document.getElementsByClassName("navigation")[0]
+    var menu_icon = document.getElementsByClassName("open_menu")[0]
+
+    menu_icon.addEventListener("click", function (){
+        navigation.classList.toggle("active")
+        menu_icon.classList.toggle("active_icon")
+        
+    })
+
+var adkar = document.getElementById("adkar")
+adkar.onclick = function(){
+    location.href = "pages/adkar.html"
+}
+var duaa = document.getElementById("duaa")
+duaa.onclick = function(){
+    location.href = "pages/duaa.html"
+}
+var adab = document.getElementById("adab")
+adab.onclick = function(){
+    location.href = "pages/adab.html"
+}
+
+last_card.onclick = function(){
+    location.href = "pages/advices.html"
+}
+
+
+    // contacts us
+
+    var contact_btn = document.getElementById("contact-header")
+
+var contact_element = document.getElementById("contact-bg")
+
+var contact_close = document.getElementById("contact-close")
+
+var form = document.getElementById("contact-form")
+var formTitle = form.querySelector("h1")
+var formBtn = document.getElementById("form-btn")
+var sentMessage = document.getElementById("sent-message")
+
+function showContact(){
+    contact_element.style.display="flex"
+    sentMessage.style.display="none"
+}
+contact_btn.addEventListener("click", showContact)
+
+form.querySelectorAll("input")[0].setAttribute("required", "")
+form.querySelectorAll("input")[1].setAttribute("required", "")
+form.querySelector("textarea").setAttribute("required", "")
+
+form.onsubmit=function  (e){
+        e.preventDefault()
+        formTitle.style.display = "none"
+        form.style.display = "none"
+        sentMessage.style.display= "block"
+    }
+
+function hideContact(){
+    sentMessage.style.display="none"
+    form.style.display="flex"
+    formTitle.style.display="flex"
+    contact_element.style.display="none"
+
+}
+contact_close.addEventListener("click", hideContact)
+
+
+</script>
+</body>
+</html>
